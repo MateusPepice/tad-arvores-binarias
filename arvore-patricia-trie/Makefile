@@ -1,7 +1,7 @@
 all: app_main
 
 app_main: app_main.o arvore_patricia_trie.o  
-	gcc obj/app_main.o obj/arvore_tries.o -o bin/app_main.out	
+	gcc obj/app_main.o obj/arvore_patricia_trie.o -o bin/app_main.out	
 # para o windows comentar a linha acima e descomentar a linha abaixo
 #gcc obj/app_main.o obj/lista_ligada.o -o bin/app_main.exe	
 
