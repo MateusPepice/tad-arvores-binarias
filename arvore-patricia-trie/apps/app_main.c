@@ -3,11 +3,14 @@
 #include <stdlib.h> 
 
 void adicionarChave(){
+   int chave;
    printf("VALOR QUE DESEJA INSERIR: \n");
+   scanf("%d", &chave);
+
 }
 
 void removerChave(){
-
+   
 }
 
 void imprimirArvore(){
@@ -38,7 +41,7 @@ int main() {
       switch (escolha)
       {
       case 1:
-         
+         adicionarChave();
          break;
       case 2:
          /* code */

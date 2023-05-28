@@ -17,8 +17,7 @@ int bits(int chave, int k){
     tipo e o tamanho do tipo*/
     int size_bits = sizeof(chave) * 8;
     printf("%d", size_bits);
-    return chave >> (size_bits - 1 - k) & 1;
-
+    return (chave >> (size_bits - 1 - k)) & 1;
 }
 
 No* criar_arvore(){
