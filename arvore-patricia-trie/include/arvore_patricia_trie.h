@@ -14,4 +14,4 @@ No* inserir (No* p, int chave);
 No* buscar (No* p, int busca);
 No* buscar_rec(No *p, int busca, int nivel);
 
-void imprimir_avore (No* p, int nivel);
+void imprimir_arvore (No* p, int nivel);
