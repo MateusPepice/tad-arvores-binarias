@@ -91,7 +91,40 @@ void imprimir_arvore(No* p, int nivel) {
     }
 }
 
-int remover_chave(No **p, int chave){
-    if(*p == NULL) return 0;
-    return 0;
+No* remover_chave(No *p, int chave){
+    if (p == NULL){
+        printf("REGISTRO NAO ENCONTRADO!\n");
+        return NULL;
+    }
+    if (chave == p->chave){
+        if (p->chave_esq == NULL && p->chave_dir == NULL){
+            free(p);
+            return NULL;
+        }
+        else if (p->chave_esq != NULL && p->chave_dir == NULL){
+            No *temp = p->chave_esq;
+            free(p);
+            return temp;
+        }
+        else if (p->chave_esq == NULL && p->chave_dir != NULL){
+            No *temp = p->chave_dir;
+            free(p);
+            return temp;
+        }
+        else {
+            No *sucessor = p->chave_dir;
+            while (sucessor->chave_esq != NULL){
+                sucessor = sucessor->chave_esq;
+            }
+            p->chave = sucessor->chave;
+            p->chave_dir = remover_chave(p->chave_dir, sucessor->chave);
+            return p;
+        }
+    }
+    if (bits(chave, 0) == 0){
+        p->chave_esq = remover_chave(p->chave_esq, chave);
+    } else {
+        p->chave_dir = remover_chave(p->chave_dir, chave);
+    }
+    return p;
 }

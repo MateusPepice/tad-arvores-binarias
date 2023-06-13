@@ -16,5 +16,8 @@ No* inserir_rec(No *p, int chave, int nivel);
 No* buscar (No* p, int busca);
 No* buscar_rec(No *p, int busca, int nivel);
 
+No* remover_chave(No *p, int chave);
+
 void imprimir_bits(int chave);
 void imprimir_arvore (No* p, int nivel);
+

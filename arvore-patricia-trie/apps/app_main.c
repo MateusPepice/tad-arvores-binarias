@@ -47,12 +47,13 @@ int main() {
          break;
       case 2:
          removerChave();
+         trie = remover_chave(trie, chaveGlobal);
          break;
       case 3:
          imprimir_arvore(trie, 0);
          break;
       case 4:
-         buscarValor();
+         buscarChave();
          buscar(trie, chaveGlobal);
          break;
       case 5:
@@ -63,7 +64,7 @@ int main() {
          printf("SAINDO DO PROGRAMA...");
          break;
       default:
-      printf("OPCAO INVALIDA!!");
+      printf("OPCAO INVALIDA!!\n");
          break;
       }
    } while (escolha !=0);
