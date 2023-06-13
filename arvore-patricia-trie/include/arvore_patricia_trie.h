@@ -11,7 +11,10 @@ No* criar_arvore();
 void destruir_arvore(No **p);
 
 No* inserir (No* p, int chave);
+No* inserir_rec(No *p, int chave, int nivel);
+
 No* buscar (No* p, int busca);
 No* buscar_rec(No *p, int busca, int nivel);
 
-void imprimir_avore (No* p, int nivel);
+void imprimir_bits(int chave);
+void imprimir_arvore (No* p, int nivel);

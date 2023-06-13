@@ -1,33 +1,33 @@
-#include "arvore_patricia_trie.h"
+#include "../include/arvore_patricia_trie.h" 
 #include <stdio.h>
 #include <stdlib.h> 
 
-void adicionarChave(){
-   int chave;
-   printf("VALOR QUE DESEJA INSERIR: \n");
-   scanf("%d", &chave);
+int chaveGlobal;
 
+void adicionarChave(){
+   printf("VALOR QUE DESEJA INSERIR: \n");
+   scanf("%d", &chaveGlobal);
 }
 
 void removerChave(){
-   
+   printf("VALOR QUE DESEJA REMOVER: \n");
+   scanf("%d", &chaveGlobal);
 }
 
-void imprimirArvore(){
-
-}
-
-void buscarValor(){
-
+void buscarChave(){
+   printf("VALOR QUE DESEJA BUSCAR: \n");
+   scanf("%d", &chaveGlobal);
 }
 
 int main() { 
    int escolha; 
-   
+   No *trie = criar_arvore();
+
    printf("\n--- Arvore Digital de Busca, Tries e Patricia Tries ---\n\n");
 
    do
    {
+      printf("------------------------------------------------\n");
       printf("ESCOLHA UMA FUNCAO PARA REALIZAR:\n");
       printf("1 - ADICIONAR CHAVE\n");
       printf("2 - REMOVER CHAVE\n");
@@ -35,6 +35,7 @@ int main() {
       printf("4 - BUSCAR VALOR\n");
       printf("5 - DESTRUIR ARVORE\n");
       printf("0 - SAIR\n");
+      printf("------------------------------------------------\n");
 
       scanf("%i", &escolha);
 
@@ -42,18 +43,21 @@ int main() {
       {
       case 1:
          adicionarChave();
+         trie = inserir(trie, chaveGlobal);
          break;
       case 2:
-         /* code */
+         removerChave();
          break;
       case 3:
-         /* code */
+         imprimir_arvore(trie, 0);
          break;
       case 4:
-         /* code */
+         buscarValor();
+         buscar(trie, chaveGlobal);
          break;
       case 5:
-         /* code */
+         destruir_arvore(&trie);
+         printf("ARVORE DESTRUIDA!\n");
          break;
       case 0:
          printf("SAINDO DO PROGRAMA...");
